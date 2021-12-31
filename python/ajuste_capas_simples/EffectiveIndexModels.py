@@ -34,7 +34,7 @@ def maxwell_garnett(n_1, n_2, f):
 
         neff: Complex effective index of refraction
     '''
-    e_1, e_2 =  complex(n_2**2), complex(n_1**2) # flipped so f belongs to n_1
+    e_1, e_2 = complex(n_2**2), complex(n_1**2) # flipped so f belongs to n_1
     e2_times_e1 = e_2*e_1
     neff = numpy.sqrt((-3.0*e2_times_e1 + 2.0*f*(e2_times_e1 - e_2**2)) \
             / (-3.0*e_2 + f*(e_2 - e_1)))
