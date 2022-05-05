@@ -9,6 +9,9 @@ from EffectiveIndexModels import looyenga
 from RefractiveIndexDB import air, silicon
 import FitUtils
 
+from pathlib import Path
+
+
 def recalcula_reflectancia(
     resultados, n_poros, n_solido, n_incidente, n_sustrato,
     ema_func=FitUtils.looyenga,
@@ -23,7 +26,8 @@ def recalcula_reflectancia(
 
 ##### Datos
 
-PATH = "/Users/kwazii/Leandro/code_dev__/python/ajuste_capas_simples"
+#PATH = "/Users/kwazii/Leandro/code_dev__/python/ajuste_capas_simples"
+PATH = str(Path(__file__).parent.absolute()) #path actual, donde está el .py (asi no se equivoca)
 
 # Genero una estructura con BeamParameters a partir de los parametros de la luz
 LAMBDA = numpy.arange(400, 1000) # rango de longitudes de onda en nm
